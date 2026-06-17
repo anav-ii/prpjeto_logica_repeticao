@@ -7,7 +7,7 @@ for(i = 0;i < 10; i++){
 
 
 //CONTADOR/ACUMULADOR
-const inputnum = document.querySelector('#num')
+const inputNum = document.querySelector('#num')
 const btnNum = document.querySelector('#btn-num')
 const divContacum = document.querySelector('#div-cont-acum')
 
@@ -15,12 +15,31 @@ let cont = 0
 let acum = 0.0
 
 btnNum.addEventListener('click', (evt)=>{
-  let numdigitado = Number(input.value)
+  evt.preventDefault()
 
-  cont++
-  acum += numDigitado
-divContacum.innerHTML = `TOTAL DE NÚMERO É: ${cont} <br>
- A SOMA DOS NÚMEROS É: ${acum}`
+  let numDigitado = Number(inputNum.value)
 
- inputnum.value = ''
+    cont++
+    acum += numDigitado
+    divContacum.innerHTML = `TOTAL DE NÚMERO É: ${cont} <br> A SOMA DOS NÚMEROS É: ${acum}`
+
+ inputNum.value = ''
+
+})
+
+
+// CONTROLADO FOR
+const inputFrase = document.querySelector('#frase')
+const inputNumRepeticao = document.querySelector('#num-repeticao')
+const bntFrase = document.querySelector('#btn-frase')
+const divFrase = document.querySelector('#div-frase')
+
+bntFrase.addEventListener('click', (evt) => {
+  let numRepeti = Number(inputNumRepeticao.value)
+  let frase = inputFrase.value
+  
+  for (i = 0; i < numRepeti; i++){
+    divFrase.innerHTML += `${i + 1} - ${frase} <br>`
+
+  }
 })
