@@ -70,5 +70,14 @@ for (let elemento of presentes){
 const divForeach = document.querySelector('#div-foreach')
 
 presentes.forEach((elemento, posicao )=>{
-  divForeach.innerHTML += `${posicao} - ${elemento} <br>`
+  divForeach.innerHTML += `${posicao + 1} - ${elemento} <br>`
 })
+
+//COLEÇÃO DE OBJETOS LITERAIS - ARRAY
+const pessoas = [
+  {nome: 'Maria Flor', idade: 25, renda:8500},
+  {nome: 'Joerdson Souza', idade: 75, renda:5000},
+  {nome: 'Taoca', idade: 28, renda:500},
+  {nome:'Chicó', idade: 36, renda:100},
+  {nome:'joão Grilo', idade: 32, renda:80},
+]
