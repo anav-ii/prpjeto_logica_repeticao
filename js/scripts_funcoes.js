@@ -1,6 +1,5 @@
-
 function mensagem(){
-    console.log('Uma mensagem')
+    console.log('Hello, wolrd!') 
 }
 
 mensagem()
@@ -9,95 +8,100 @@ function mensagemLinda(txt){
     console.log(txt)
 }
 
-mensagemLinda('Brasil vai dar um pau no Haiti')
+mensagemLinda('Haiti vai perder pro Brasil')
 
 function somaNumeros(num1, num2){
     return num1 + num2
 }
 
-console.log('As soma dos numeros',somaNumeros(10, 58))
+console.log('A soma dos numeros 10 e 58 é: ', somaNumeros(10,58))
 
 const multiplicacao = function(num1, num2){
     return num1 * num2
 }
 
-console.log(multiplicacao(64, 5))
+console.log(multiplicacao(64,5))
 
-console.log('-----> ARROW FUNCTION <-----')
+console.log('----------> ARROW FUNCTION <-----------')
 
-const msgArrow = () => {
+const msgArrow = () =>{
     console.log('Outra mensagem na arrow function')
 }
 
 msgArrow()
 
-const divisaoNum = (valor1, valor2) => {
-
+const divisaoNum = (valor1, valor2) =>{
+    
     let resposta
     
-    if ((valor1 > 0) && (valor2 > 0)){
-        resposta - valor1 / valor2
+    if((valor1 > 0) && (valor2 > 0)){
+        resposta =  valor1 / valor2
     }else{
-        resposta = 'NÃO É POSSIVEL DIVISÃO POR ZERO'
+        resposta = 'NÃO É POSSÍVEL DIVISÃO POR ZERO'
     }
 
     return resposta
 }
 
-console.log(divisaoNum(10,8000))
+console.log(divisaoNum(10, 8000))
 
 console.log(Math.random())
 
-console.log('O número sorteado =====> ',parseInt(Math.random() * 100))
+console.log('Numero da mega da virada ---->', parseInt(Math.random() * 100) )
 
 setTimeout(()=>{
-    console.log('Executou após 5s')
-    msgArrow()
+    console.log('Excutou após 5s')
 }, 5000)
 
-let cont = 0
-
+/*let cont = 0
 const intervalo = setInterval(()=>{
     cont++
-    console.log(cont, 'Repetição da setInterval')
+    console.log(cont,'Repetição setInterval')
 
-    if (cont == 5){
+    if(cont == 5){
         clearInterval(intervalo)
-    } 
-
+    }
 }, 3000)
+*/
 
-const divNumSorteio = document.querySelector
-('#div-num-sorteio')
+const divNumSorteio = document.querySelector('#div-num-sorteio')
 
-let contVolta = 0, numSorteado = 0, contPar = 0, contInpar = 0
+let contVolta = 0, numSorteado = 0, contPar = 0, contImpar = 0
 
-const sorteio = setInterval(() => {
-    contVolta++
+const sorteio = setInterval(()=>{
+    contVolta ++
 
     numSorteado = parseInt(Math.random() * 60)
 
-    console.log(`${contVolta}º número sorteado ${numSorteado}`)
 
-    if (numSorteado % 2 == 6) {
-        contPar++
+    console.log(`${contVolta}º Numero sorteado ${numSorteado}`)
+
+    if(numSorteado % 2 == 0){
+        contPar ++
     }else{
-        contInpar++
+        contImpar++
     }
-divNumSorteio.innerHTML += `${contVolta}º número gerado ${numSorteado} - ${numSorteado % 2 == 0 ? 'PAR' :
-'ÍMPAR'} <br>`
-
-if (numSorteado == 6) {
-    console.log('------> SORTEIO ENCERRADO <------')
-
-
-    divNumSorteio.innerHTML += `------> SORTEIO ENCERRADO <------ <br>
-    TOTAL DE NÚMEROS GERADOS: ${contVolta} <br>
-    TOTAL DE NÚMEROS PAR: ${contPar} <br>
-    TOTAL DE NÚMEROS ÍMPAR: ${contInpar}`
-
-    clearInterval(sorteio)
-    contVolta = 0
-    numSorteado = 0
+    
+    divNumSorteio.innerHTML += `${contVolta}º numero gerado ${numSorteado} - ${numSorteado % 2 == 0 ? 'PAR': 'IMPAR'} <br>`
+    
+    if (numSorteado == 6){
+        console.log('-------> SORTEIO ENCERRADO <---------')
+        
+        
+        divNumSorteio.innerHTML += `-------> SORTEIO ENCERRADO <--------- <br> TOTAL DE NUMEROS GERADOS: ${contVolta} <br> TOTAL DE NUMEROS PAR: ${contPar} <br> TOTAL DE NUMEROS ÍMPAR: ${contImpar}`
+        
+        clearInterval(sorteio)
+        contVolta = 0
+        numSorteado = 0
     }
 }, 2000)
+
+
+
+
+
+
+
+
+
+
